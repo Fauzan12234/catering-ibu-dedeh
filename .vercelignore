@@ -1,6 +1,4 @@
 node_modules
 tests
-storage/logs
+public/media/video-hero.mp4
 storage/framework/cache
-storage/framework/sessions
-storage/framework/testing
