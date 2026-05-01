@@ -8,7 +8,8 @@
                 "excludeFiles": [
                     "node_modules/**",
                     "tests/**",
-                    "public/media/menu**",
+                    "public/media/**",
+                    "public/uploads/**",
                     "storage/framework/cache/**"
                 ]
             }
