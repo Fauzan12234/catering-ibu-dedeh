@@ -6,9 +6,9 @@
             "use": "vercel-php@0.6.2",
             "config": {
                 "excludeFiles": [
-                    "public/**",
                     "node_modules/**",
                     "tests/**",
+                    "public/media/menu**",
                     "storage/framework/cache/**"
                 ]
             }
