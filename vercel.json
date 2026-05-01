@@ -3,16 +3,7 @@
     "builds": [
         {
             "src": "api/index.php",
-            "use": "vercel-php@0.6.2",
-            "config": {
-                "excludeFiles": [
-                    "node_modules/**",
-                    "tests/**",
-                    "public/media/**",
-                    "public/uploads/**",
-                    "storage/framework/cache/**"
-                ]
-            }
+            "use": "vercel-php@0.6.0"
         },
         {
             "src": "public/**",

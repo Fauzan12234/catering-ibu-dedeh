@@ -1,14 +1,14 @@
 <?php
 
-// Paksa agar semua error tampil ke log Vercel
+// 1. Tampilkan error secara paksa (hanya untuk debug)
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Pastikan path ke vendor/autoload benar
+// 2. Load Autoload
 require __DIR__ . '/../vendor/autoload.php';
 
-// Pindahkan storage ke /tmp (Wajib di Vercel)
+// 3. Pindahkan folder storage ke /tmp (Vercel bersifat read-only)
 $storagePaths = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/sessions',
@@ -22,5 +22,11 @@ foreach ($storagePaths as $path) {
     }
 }
 
-// Eksekusi Laravel
+// 4. Paksa Laravel mengabaikan cache config dari laptop
+putenv('APP_CONFIG_CACHE=' . '/tmp/config.php');
+putenv('APP_ROUTES_CACHE=' . '/tmp/routes.php');
+putenv('APP_SERVICES_CACHE=' . '/tmp/services.php');
+putenv('APP_PACKAGES_CACHE=' . '/tmp/packages.php');
+
+// 5. Jalankan Aplikasi
 require __DIR__ . '/../public/index.php';
