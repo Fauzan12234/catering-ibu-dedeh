@@ -20,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if (config('app.env') === 'production') {
+        config(['view.compiled' => '/tmp/storage/framework/views']);
+        }
         // 2. Tambahkan logika ini: Jika url mengandung kata 'ngrok', paksa pakai HTTPS
         if (str_contains(request()->getHost(), 'ngrok') || str_contains(request()->getHost(), 'infinityfree')) {
             URL::forceScheme('https');
