@@ -59,8 +59,9 @@ return [
             'engine' => null,
             // INI BAGIAN YANG DIUBAH AGAR BISA CONNECT KE TIDB
             'options' => [
-                \PDO::MYSQL_ATTR_SSL_CA => base_path('artisan'), 
-                \PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+// Gunakan path absolut yang aman untuk Vercel
+            \PDO::MYSQL_ATTR_SSL_CA => is_file(base_path('artisan')) ? base_path('artisan') : null,
+            \PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
             ],
         ],
 
