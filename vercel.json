@@ -7,8 +7,7 @@
             "config": {
                 "excludeFiles": [
                     "node_modules/**",
-                    "public/media/**",
-                    "public/uploads/**",
+                    "public/media/video-hero.mp4",
                     "tests/**",
                     "storage/framework/cache/**"
                 ]
